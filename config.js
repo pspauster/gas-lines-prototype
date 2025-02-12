@@ -13,7 +13,7 @@ var config = {
     },
     insetPosition: 'bottom-right',
     theme: 'dark',
-    use3dTerrain: false, //set true for enabling 3D maps.
+    use3dTerrain: true, //set true for enabling 3D maps.
     auto: false,
     title: 'HEADLINE GOES HERE',
     subtitle: 'Subtitle is a little more verbose than the headline.',
@@ -29,7 +29,7 @@ var config = {
             description: 'TK                     TK',
             location: {
                 center: [-74.2179, 42.1994],
-                zoom: 7.5,
+                zoom: 6.75,
                 pitch: 60,
                 bearing: 0
             },
@@ -59,8 +59,8 @@ var config = {
             //image: './assets/san-fran.jpeg',
             description: 'But the gas system has continued to grow. A major project by the Iroquois Pipeline Company to bring more gas into New York City that could generate $3.78 billion in climate damages over the next five years was approved on February 7th. ',
             location: {
-                center: [-74.2179, 42.1994],
-                zoom: 7.5,
+                center: [-74.0179, 41.7994],
+                zoom: 7.25,
                 pitch: 60,
                 bearing: 0
             },
@@ -69,7 +69,7 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'ny-pipelines-iriquois',
+                    layer: 'ny-pipelines-iroquois',
                     opacity: 1,
                     duration: 5000
                 },
@@ -81,7 +81,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'ny-pipelines-iriquois',
+                    layer: 'ny-pipelines-iroquois',
                     opacity: 0,
                     duration: 5000
                 },
@@ -95,7 +95,7 @@ var config = {
             //image: './assets/san-fran.jpeg',
             description: 'This is one of at least 10 proposals to pump more gas into the Empire State that have been introduced since 2019, public filings uncovered by City Limits show. ',
             location: {
-                center: [-74.2179, 42.1994],
+                center: [-74.2179, 41.1994],
                 zoom: 7.5,
                 pitch: 60,
                 bearing: 0
@@ -105,7 +105,7 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'ny-pipelines-all',
+                    layer: 'ny-pipelines-proposed',
                     opacity: 1,
                     duration: 5000
                 }

@@ -316,9 +316,10 @@
                 });
 
             };
+            //add pipelines
             map.addSource('ny-pipelines', {
                     type: 'geojson',
-                    data: 'data/ny-pipelines.geojson',
+                    data: 'data/map-2.geojson',
                     generateID: true
                 })
             // add pipelines
@@ -334,7 +335,40 @@
                     layout: {
                         visibility: 'visible'
                     }
-            })                
+            })  
+            map.addLayer({
+                    'id':'ny-pipelines-iroquois',
+                    'type': 'line',
+                    'source': 'ny-pipelines',
+                    'paint': {
+                        'line-color': 'green',
+                        'line-width': 3,
+                        'opacity': 1,
+                    },
+                    'layout': {
+                        visibility: 'visible'
+                    },
+                    filter: [
+                        '==', 'Operator', "National Grid"
+                    ]
+            })  
+            map.addLayer({
+                    'id':'ny-pipelines-proposed',
+                    'type': 'line',
+                    'source': 'ny-pipelines',
+                    'paint': {
+                        'line-color': 'blue',
+                        'line-width': 3,
+                        'opacity': 0,
+                    },
+                    'layout': {
+                        visibility: 'visible'
+                    },
+                    filter: [
+                        "in", ["get", "Operator"], ["literal", ["Iroquois Gas Trans Co", "Transcontinental Gas PL", "Algonquin Gas Trans Co", "Tennessee Gas Pipeline", "National Grid", "Valley Energy Inc"]]
+                    ]
+            })
+            
 
             // setup the instance, pass callback functions
             scroller

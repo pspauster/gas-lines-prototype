@@ -44,6 +44,10 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [

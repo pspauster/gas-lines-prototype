@@ -39,20 +39,22 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'ny-pipelines-all',
-                    opacity: .5,
-                    duration: 2000
+                    opacity: 1,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-all',
-                    opacity: .25,
-                    duration: 1000
+                    opacity: 0,
                 }
             ]
         },
         {
-            id: 'ny-iriquois',
+            id: 'ny-iroquois',
             alignment: 'left',
             hidden: false,
             //title: 'New York States',
@@ -71,24 +73,17 @@ var config = {
                 {
                     layer: 'ny-pipelines-iroquois',
                     opacity: 1,
-                    duration: 5000
                 },
-                {
-                    layer: 'ny-pipelines-all',
-                    opacity: 0,
-                    duration: 5000
-                }
             ],
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-iroquois',
                     opacity: 0,
-                    duration: 5000
                 },
             ]
         },
         {
-            id: 'ny-pipelines',
+            id: 'ny-proposed',
             alignment: 'left',
             hidden: false,
             //title: 'New York States',
@@ -107,14 +102,13 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
-                    duration: 5000
                 }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 1,
+                }
             ]
         },
         {
@@ -135,16 +129,11 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'ny-athens-map',
+                    layer: 'ny-pipelines-proposed',
                     opacity: 1,
-                    duration: 5000
-                }
+                } 
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
             ]
         },
     ]

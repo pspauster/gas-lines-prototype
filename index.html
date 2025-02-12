@@ -300,6 +300,7 @@
                     'tileSize': 512,
                     'maxzoom': 14
                 });
+
                 // add the DEM source as a terrain layer with exaggerated height
                 map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
 
@@ -313,7 +314,27 @@
                         'sky-atmosphere-sun-intensity': 15
                     }
                 });
+
             };
+            map.addSource('ny-pipelines', {
+                    type: 'geojson',
+                    data: 'data/ny-pipelines.geojson',
+                    generateID: true
+                })
+            // add pipelines
+            map.addLayer({
+                    'id':'ny-pipelines-all',
+                    'type': 'line',
+                    'source': 'ny-pipelines',
+                    'paint': {
+                        'line-color': '#FF0000',
+                        'line-width': 3,
+                        'opacity': 0,
+                    },
+                    layout: {
+                        visibility: 'visible'
+                    }
+            })                
 
             // setup the instance, pass callback functions
             scroller

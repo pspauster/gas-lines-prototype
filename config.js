@@ -1,35 +1,35 @@
 var config = {
-    // style: 'mapbox://styles/mapbox/streets-v12',
+    style: 'mapbox://styles/mapbox/dark-v11',
     // leave commented to use Mapbox Standard Style
-    accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
-    showMarkers: true,
+    accessToken: 'pk.eyJ1IjoicHNwYXVzdGVyIiwiYSI6ImNtNzEzNWVuMDA4bXoycnE3dTR5MjNncnMifQ.eaNWOML8R7HzgViimF03Qg',
+    showMarkers: false,
     markerColor: '#3FB1CE',
     //projection: 'equirectangular',
     //Read more about available projections here
     //https://docs.mapbox.com/mapbox-gl-js/example/projections/
     inset: true,
     insetOptions: {
-        markerColor: 'orange'
+        markerColor: 'red'
     },
     insetPosition: 'bottom-right',
     theme: 'dark',
     use3dTerrain: false, //set true for enabling 3D maps.
     auto: false,
-    title: 'Your Title Goes Here',
-    subtitle: 'The Storytelling Template helps you create an awesome animated map story with ease.',
-    byline: 'By a I.M. Amapper',
+    title: 'HEADLINE GOES HERE',
+    subtitle: 'Subtitle is a little more verbose than the headline.',
+    byline: 'By Mariana Simoes\nDeveloped by Patrick Spauster',
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
-            id: 'slug-style-id',
+            id: 'ny-base',
             alignment: 'left',
             hidden: false,
-            title: 'San Francisco',
-            image: './assets/san-fran.jpeg',
-            description: 'The first chapter contains a title, image, and camera view for San Francisco, California. Update the chapter data to make it your own.',
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: 'TK New York State moves X Gallons of natural gas a year',
             location: {
-                center: [-122.418398, 37.759483],
-                zoom: 8.5,
+                center: [-74.2179, 42.1994],
+                zoom: 7.5,
                 pitch: 60,
                 bearing: 0
             },
@@ -37,11 +37,78 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1,
-                //     duration: 5000
-                // }
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: .5,
+                    duration: 2000
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: .25,
+                    duration: 1000
+                }
+            ]
+        },
+        {
+            id: 'ny-iriquois',
+            alignment: 'left',
+            hidden: false,
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: 'But the gas system has continued to grow. A major project by the Iroquois Pipeline Company to bring more gas into New York City that could generate $3.78 billion in climate damages over the next five years was approved on February 7th. ',
+            location: {
+                center: [-74.2179, 42.1994],
+                zoom: 7.5,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'ny-pipelines-iriquois',
+                    opacity: 1,
+                    duration: 5000
+                },
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                    duration: 5000
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-iriquois',
+                    opacity: 0,
+                    duration: 5000
+                },
+            ]
+        },
+        {
+            id: 'ny-pipelines',
+            alignment: 'left',
+            hidden: false,
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: 'This is one of at least 10 proposals to pump more gas into the Empire State that have been introduced since 2019, public filings uncovered by City Limits show. ',
+            location: {
+                center: [-74.2179, 42.1994],
+                zoom: 7.5,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 1,
+                    duration: 5000
+                }
             ],
             onChapterExit: [
                 // {
@@ -51,67 +118,34 @@ var config = {
             ]
         },
         {
-            id: 'second-identifier',
-            alignment: 'right',
-            hidden: false,
-            title: 'Washington, D.C.',
-            image: './assets/washington-dc.jpg',
-            description: 'The second chapter flies to Washington, D.C., updates the camera pitch, and slowly rotates. <br>  <br> Washington, D.C., the capital of the United States, is a vibrant city known for its iconic landmarks, including the White House, the U.S. Capitol, and the Washington Monument. It serves as the political heart of the nation and a center for history, culture, and international diplomacy.',
-            location: {
-                center: [-77.020636, 38.886900],
-                zoom: 8.5,
-                pitch: 60,
-                bearing: -43.2,
-                // flyTo additional controls-
-                // These options control the flight curve, making it move
-                // slowly and zoom out almost completely before starting
-                // to pan.
-                //speed: 2, // make the flying slow
-                //curve: 1, // change the speed at which it zooms out
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: true,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: []
-        },
-        {
-            id: 'third-identifier',
+            id: 'ny-athens',
             alignment: 'left',
             hidden: false,
-            title: 'Geneva',
-            image: './assets/geneva.jpg',
-            description: 'Geneva, Switzerland, is a picturesque city nestled along the shores of Lake Geneva, surrounded by the Alps and Jura mountains. Known as a global hub for diplomacy and finance, it is home to numerous international organizations, including the United Nations and the Red Cross.',
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: 'Now Iroquois’ newly approved project is set to spew pollution into communities like Athens, a town in southeast central New York that filmmaker Lisa Thomas, calls home.',
             location: {
-                center: [6.15116, 46.20595],
-                zoom: 12.52,
-                pitch: 8.01,
-                bearing: 0.00
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: []
-        },
-        {
-            id: 'fourth-chapter',
-            alignment: 'fully',
-            hidden: false,
-            title: 'Buenos Aires',
-            image: './assets/buenos-aires.jpg',
-            description: 'Buenos Aires, the capital of Argentina, is a dynamic city known for its European-inspired architecture, vibrant tango culture, and rich culinary scene. Often called the "Paris of South America," it blends historic charm with modern energy.  You can add as many chapters as you need, just copy the JSON data and make changes.',
-            location: {
-                center: [-58.54195, -34.71600],
-                zoom: 4,
-                pitch: 0,
+                center: [-73.8145073969854, 42.26252101379557],
+                zoom: 15,
+                pitch: 60,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
-            onChapterEnter: [],
-            onChapterExit: []
-        }
+            onChapterEnter: [
+                {
+                    layer: 'ny-athens-map',
+                    opacity: 1,
+                    duration: 5000
+                }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'layer-name',
+                //     opacity: 0
+                // }
+            ]
+        },
     ]
 };

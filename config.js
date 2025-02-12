@@ -26,7 +26,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'TK New York State moves X Gallons of natural gas a year',
+            description: 'TK                     TK',
             location: {
                 center: [-74.2179, 42.1994],
                 zoom: 7.5,

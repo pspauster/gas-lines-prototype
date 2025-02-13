@@ -368,7 +368,35 @@
                         "in", ["get", "Operator"], ["literal", ["Iroquois Gas Trans Co", "Transcontinental Gas PL", "Algonquin Gas Trans Co", "Tennessee Gas Pipeline", "National Grid", "Valley Energy Inc"]]
                     ]
             })
-            
+            //addpoints
+            map.addSource('ny-stations', {
+                type: 'geojson',
+                data: 'data/points-layer.geojson',
+                generateID: true
+            })
+            map.addLayer({
+                'id':'ny-proposed-points',
+                'type': 'circle',
+                'source': 'ny-stations',
+                'paint': {
+                    'circle-opacity': 0.6,
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': 'blue',
+                    'circle-color': 'blue'
+                }
+            })
+            map.addLayer({
+                'id':'ny-points-iroquois',
+                'type': 'circle',
+                'source': 'ny-stations',
+                'paint': {
+                    'circle-opacity': 0.6,
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': 'green',
+                    'circle-color': 'green'
+                },            
+                'filter': ['==',"Pipeline","Iroquois Pipeline"]
+            })
 
             // setup the instance, pass callback functions
             scroller

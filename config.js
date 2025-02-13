@@ -48,6 +48,14 @@ var config = {
                 {
                     layer: 'ny-pipelines-iroquois',
                     opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
@@ -78,10 +86,18 @@ var config = {
                     layer: 'ny-pipelines-iroquois',
                     opacity: 1,
                 },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 1,
+                },
             ],
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
                     opacity: 0,
                 },
             ]
@@ -106,13 +122,17 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
+                }  ,
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 1,
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
-                }
+                },
             ]
         },
         {
@@ -123,8 +143,8 @@ var config = {
             //image: './assets/san-fran.jpeg',
             description: 'Now Iroquois’ newly approved project is set to spew pollution into communities like Athens, a town in southeast central New York that filmmaker Lisa Thomas, calls home.',
             location: {
-                center: [-73.8145073969854, 42.26252101379557],
-                zoom: 15,
+                center: [-73.82829221631468, 42.27286231008302],
+                zoom: 12,
                 pitch: 60,
                 bearing: 0
             },

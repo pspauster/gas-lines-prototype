@@ -30,7 +30,6 @@
             width: 100vw;
             position: fixed;
         }
-
         #header {
             margin: auto;
             width: 100%;
@@ -396,6 +395,24 @@
                     'circle-color': 'green'
                 },            
                 'filter': ['==',"Pipeline","Iroquois Pipeline"]
+            })
+
+            // add to map
+            map.addSource('img-buildings', {
+                type: 'image',
+                url: 'assets/buildings_smoke.gif',
+                coordinates: [
+                    [-76.54, 39.18],
+                    [-76.52, 39.18],
+                    [-76.52, 39.17],
+                    [-76.54, 39.17]
+                ]
+            });
+
+            map.addLayer({
+                'id':'img-buildings',
+                'type':'raster',
+                'source':'img-buildings'
             })
 
             // setup the instance, pass callback functions

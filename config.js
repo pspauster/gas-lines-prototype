@@ -21,12 +21,102 @@ var config = {
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
+            id: 'photo-title',
+            alignment: 'left',
+            hidden: false,
+            //title: 'New York States',
+            //imagebackground: './assets/buildings_smoke.gif',
+            description: 'The United States is facing a pivotal moment in its fight against climate change as Donald Trump carries out plans to roll back those efforts.            ',
+            location: {
+                center: [-76.54, 39.18],
+                zoom: 6.75,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 0,
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                }
+            ]
+        },
+        {
+            id: 'photo-law',
+            alignment: 'left',
+            hidden: false,
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: 'Back in 2019, when New York passed its landmark climate law, the CLCPA, it became a shining example of national climate action. The law established a roadmap for the State to mostly phase out planet-warming fossil fuels like gas by 2050 and transition to clean energy instead.',
+            location: {
+                center: [-74.2179, 42.1994],
+                zoom: 6.75,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 0,
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                }
+            ]
+        },        
+        {
             id: 'ny-base',
             alignment: 'left',
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'TK                     TK',
+            description: 'I think we need something here to talk about how much gas the state uses + what are we looking at here?',
             location: {
                 center: [-74.2179, 42.1994],
                 zoom: 6.75,

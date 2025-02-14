@@ -25,7 +25,8 @@ var config = {
             alignment: 'left',
             hidden: false,
             //title: 'New York States',
-            //imagebackground: './assets/buildings_smoke.gif',
+            type: 'image',
+            imagebackground: './assets/buildings_smoke.gif',
             description: 'The United States is facing a pivotal moment in its fight against climate change as Donald Trump carries out plans to roll back those efforts.            ',
             location: {
                 center: [-76.54, 39.18],
@@ -70,7 +71,8 @@ var config = {
             alignment: 'left',
             hidden: false,
             //title: 'New York States',
-            //image: './assets/san-fran.jpeg',
+            type: 'image',
+            imagebackground: 'assets/clcpa_bill_signing_sjm_in_nyc_copy.jpeg',
             description: 'Back in 2019, when New York passed its landmark climate law, the CLCPA, it became a shining example of national climate action. The law established a roadmap for the State to mostly phase out planet-warming fossil fuels like gas by 2050 and transition to clean energy instead.',
             location: {
                 center: [-74.2179, 42.1994],
@@ -106,7 +108,7 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-all',
-                    opacity: 0,
+                    opacity: 1,
                 }
             ]
         },        

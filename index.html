@@ -30,6 +30,9 @@
             width: 100vw;
             position: fixed;
         }
+        #story {
+            background-size: 100%;
+        }
         #header {
             margin: auto;
             width: 100%;
@@ -425,6 +428,8 @@
                 .onStepEnter(async response => {
                     var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
                     var chapter = config.chapters[current_chapter];
+                    var mapcanvas = document.getElementById('map')
+                    var background = document.getElementById('story')
 
                     response.element.classList.add('active');
                     map[chapter.mapAnimation || 'flyTo'](chapter.location);
@@ -448,6 +453,12 @@
                             });
                         });
                     }
+                    if (chapter.type === 'image') {
+                        mapcanvas.hidden = true;
+                        background.style.backgroundImage = `url('${chapter.imagebackground}')`
+                    } else {
+                        mapcanvas.hidden = false
+                    };
                     if (config.auto) {
                         var next_chapter = (current_chapter + 1) % config.chapters.length;
                         map.once('moveend', () => {

@@ -15,14 +15,60 @@ var config = {
     theme: 'dark',
     use3dTerrain: true, //set true for enabling 3D maps.
     auto: false,
-    title: 'HEADLINE GOES HERE',
-    subtitle: 'Subtitle is a little more verbose than the headline.',
-    byline: 'By Mariana Simoes\nDeveloped by Patrick Spauster',
+    //title: 'HEADLINE GOES HERE',
+    //subtitle: 'Subtitle is a little more verbose than the headline.',
+    //byline: 'By Mariana Simoes\nDeveloped by Patrick Spauster',
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
             id: 'photo-title',
-            alignment: 'left',
+            alignment: 'center',
+            hidden: false,
+            title: 'HEADLINE HERE',
+            type: 'image',
+            imagebackground: './assets/buildings_smoke.gif',
+            description: 'Subtitle is a little more verbose \n by Mariana Simoes & developed by Patrick Spauster',
+            location: {
+                center: [-76.54, 39.18],
+                zoom: 6.75,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 0,
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                }
+            ]
+        },
+        {
+            id: 'photo-title',
+            alignment: 'center',
             hidden: false,
             //title: 'New York States',
             type: 'image',
@@ -68,7 +114,7 @@ var config = {
         },
         {
             id: 'photo-law',
-            alignment: 'left',
+            alignment: 'center',
             hidden: false,
             //title: 'New York States',
             type: 'image',

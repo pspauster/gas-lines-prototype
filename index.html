@@ -33,6 +33,13 @@
         #story {
             background-size: 100%;
         }
+        #image {
+            background-size: 100%;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+        }
         #header {
             margin: auto;
             width: 100%;
@@ -141,6 +148,7 @@
 <body>
 
     <div id="map"></div>
+    <div id="image"></div>
     <div id="story"></div>
 
     <script src="./config.js"></script>
@@ -400,24 +408,6 @@
                 'filter': ['==',"Pipeline","Iroquois Pipeline"]
             })
 
-            // add to map
-            map.addSource('img-buildings', {
-                type: 'image',
-                url: 'assets/buildings_smoke.gif',
-                coordinates: [
-                    [-76.54, 39.18],
-                    [-76.52, 39.18],
-                    [-76.52, 39.17],
-                    [-76.54, 39.17]
-                ]
-            });
-
-            map.addLayer({
-                'id':'img-buildings',
-                'type':'raster',
-                'source':'img-buildings'
-            })
-
             // setup the instance, pass callback functions
             scroller
                 .setup({
@@ -429,7 +419,7 @@
                     var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
                     var chapter = config.chapters[current_chapter];
                     var mapcanvas = document.getElementById('map')
-                    var background = document.getElementById('story')
+                    var background = document.getElementById('image')
 
                     response.element.classList.add('active');
                     map[chapter.mapAnimation || 'flyTo'](chapter.location);
@@ -455,9 +445,11 @@
                     }
                     if (chapter.type === 'image') {
                         mapcanvas.hidden = true;
+                        background.hidden = false;
                         background.style.backgroundImage = `url('${chapter.imagebackground}')`
                     } else {
-                        mapcanvas.hidden = false
+                        mapcanvas.hidden = false;
+                        background.hidden = true
                     };
                     if (config.auto) {
                         var next_chapter = (current_chapter + 1) % config.chapters.length;

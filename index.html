@@ -33,8 +33,28 @@
         #story {
             background-size: 100%;
         }
+        #copy {
+            position:relative;
+            background-color: white;
+            margin: auto;
+            align-content: center;
+            justify-content: center;
+        }
+        p {
+            padding: 16px;
+            margin: auto;
+            max-width: 1000px;
+            justify-content: center
+        }
+        img {
+            margin: auto;
+            max-width: 100%;
+            display: block;
+            padding: 10px;
+        }
         #image {
             background-size: cover;
+            background-position: center;
             top: 0;
             height: 100vh;
             width: 100vw;
@@ -150,6 +170,25 @@
     <div id="map"></div>
     <div id="image"></div>
     <div id="story"></div>
+
+    <div id="copy">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus tortor, euismod tristique dignissim ac, varius eu purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed in ex velit. Morbi nisi turpis, eleifend a neque eu, placerat tempus eros. Nam elementum velit quis faucibus scelerisque. Aenean pulvinar metus vitae tincidunt imperdiet. In pellentesque sapien sed urna consectetur, eu faucibus enim blandit. Morbi lobortis pharetra mi, ut vulputate quam laoreet id. Nullam vitae erat elementum mauris iaculis scelerisque. Proin dapibus velit non interdum accumsan. Cras interdum sed velit nec vulputate. Nulla egestas ornare molestie. Suspendisse nec finibus quam. Morbi porta eros sit amet leo pellentesque placerat.
+        </p>
+        <img src="assets/cfheps.jpg"></img>
+        <p>
+            Aliquam id gravida mauris. Quisque malesuada nulla felis. Vivamus sit amet dignissim massa, non fermentum est. Quisque odio ipsum, facilisis a sem vel, tincidunt mattis dui. Fusce aliquam id enim at maximus. Duis lacinia leo et felis posuere, vitae iaculis nisi sollicitudin. In rutrum dolor id varius dictum. Curabitur tempor vel sapien sed consectetur. Pellentesque eros ipsum, imperdiet ac dolor at, suscipit tempus leo. Sed sit amet tempor felis. Nullam rutrum odio non orci varius, vel aliquam odio dictum. Sed sollicitudin sagittis lacus, eget hendrerit ex gravida et. Suspendisse fringilla tortor felis, eget pretium libero volutpat non. Proin neque elit, rutrum a molestie vitae, porta non magna. Praesent placerat gravida lectus eget gravida.
+        </p>
+        <p>
+            Proin vel est pretium, feugiat lectus ut, fringilla ipsum. Sed pretium nulla sed ligula vulputate, sed vehicula eros pharetra. Fusce sollicitudin elementum diam id aliquam. Nam a commodo dui. Mauris malesuada orci pellentesque magna accumsan volutpat. Donec non suscipit neque, et maximus orci. Vestibulum eu diam ipsum.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis purus id nulla scelerisque vestibulum. Phasellus dapibus faucibus elit a pretium. Vivamus ut luctus augue, in aliquet velit. Nulla facilisi. Nulla laoreet ut neque eu tempus. Aenean et eleifend erat. Pellentesque gravida tortor libero, vel sagittis lacus sagittis at. Cras a sollicitudin nisi. Fusce quis interdum ligula, vitae pellentesque massa.
+        </p>
+        <p>
+            Phasellus tincidunt lectus vitae diam vulputate vehicula. Cras a bibendum ligula, ac imperdiet metus. Ut varius quis magna in pellentesque. Nulla quis accumsan lectus. Praesent vitae aliquam ipsum. Praesent ipsum eros, laoreet ut pharetra vitae, gravida quis nunc. Aenean arcu ante, fermentum eget dignissim quis, aliquet vulputate leo. Ut vulputate metus in justo molestie, eu vestibulum augue suscipit.
+        </p>
+    </div>
 
     <script src="./config.js"></script>
     <script>
@@ -330,7 +369,7 @@
             map.addSource('ny-pipelines', {
                     type: 'geojson',
                     data: 'data/map-2.geojson',
-                    generateID: true
+                    //generateID: true
                 })
             // add pipelines
             map.addLayer({
@@ -377,6 +416,9 @@
                     filter: [
                         "in", ["get", "Operator"], ["literal", ["Iroquois Gas Trans Co", "Transcontinental Gas PL", "Algonquin Gas Trans Co", "Tennessee Gas Pipeline", "National Grid", "Valley Energy Inc"]]
                     ]
+                    // filter: [
+                    //     '==', 'Proposed', "Yes"
+                    // ]
             })
             //addpoints
             map.addSource('ny-stations', {

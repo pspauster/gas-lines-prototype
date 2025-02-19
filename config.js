@@ -18,16 +18,16 @@ var config = {
     //title: 'HEADLINE GOES HERE',
     //subtitle: 'Subtitle is a little more verbose than the headline.',
     //byline: 'By Mariana Simoes\nDeveloped by Patrick Spauster',
-    footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
+    footer: 'Developed by Patrick Spauster <br> Source: source citations, etc.  Adapted from <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
             id: 'photo-title',
             alignment: 'center',
             hidden: false,
-            title: 'HEADLINE HERE',
+            title: 'Is New York Still Leading the Charge in the Nation’s Fight Against Climate Change?',
             type: 'image',
             imagebackground: './assets/buildings_smoke.gif',
-            description: 'Subtitle is a little more verbose \n by Mariana Simoes & developed by Patrick Spauster',
+            description: 'As New York begins to backtrack on commitments to mostly phase out the use of planet-warming fossil fuels like gas, the state approves a new project to funnel more gas into the Big Apple. <br><br> By Mariana Simões',
             location: {
                 center: [-76.54, 39.18],
                 zoom: 6.75,
@@ -73,7 +73,7 @@ var config = {
             //title: 'New York States',
             type: 'image',
             imagebackground: './assets/buildings_smoke.gif',
-            description: 'The United States is facing a pivotal moment in its fight against climate change as Donald Trump carries out plans to roll back those efforts.            ',
+            description: 'The United States is facing a pivotal moment in its fight against climate change as Donald Trump carries out plans to roll back those efforts.',
             location: {
                 center: [-76.54, 39.18],
                 zoom: 6.75,
@@ -157,14 +157,14 @@ var config = {
                     opacity: 1,
                 }
             ]
-        },        
+        },
         {
             id: 'ny-base',
             alignment: 'left',
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'I think we need something here to talk about how much gas the state uses + what are we looking at here?',
+            description: 'But 96 percent of the downstate region, where the Big Apple is located, is still powered by fossil fuels, through pipelines like these for natural gas. In total, only about 29 percent of the entire Empire State’s electricity comes from clean renewable sources.',
             location: {
                 center: [-74.2179, 42.1994],
                 zoom: 6.75,
@@ -209,7 +209,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'But the gas system has continued to grow. A major project by the Iroquois Pipeline Company to bring more gas into New York City that could generate $3.78 billion in climate damages over the next five years was approved on February 7th. ',
+            description: "And more gas is about to make its way to New York City, putting into question the state's ability to meet its climate goals. On February 7th, the State greenlit an enhancement project by gas supplier, Iroquois Pipeline Company, to boost the capacity of four facilities that compress gas to push more of it into the City.",
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -246,7 +246,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'This is one of at least 10 proposals to pump more gas into the Empire State that have been introduced since 2019, public filings uncovered by City Limits show. ',
+            description: 'City Limits found 10 proposals for gas expansion over the last five years and mapped out continued bids to keep gas flowing in the Empire State.',
             location: {
                 center: [-74.2179, 41.1994],
                 zoom: 7.5,
@@ -260,7 +260,7 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
-                }  ,
+                },
                 {
                     layer: 'ny-proposed-points',
                     opacity: 1,
@@ -279,7 +279,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'Now Iroquois’ newly approved project is set to spew pollution into communities like Athens, a town in southeast central New York that filmmaker Lisa Thomas, calls home.',
+            description: 'The Iroquois project could generate $3.78 billion in climate damages and add the equivalent of 186,000 passenger cars to the road in planet-warming gasses. It will also spew pollution directly into communities like Athens, a town in southeast central New York that filmmaker, Lisa Thomas, calls home.',
             location: {
                 center: [-73.82829221631468, 42.27286231008302],
                 zoom: 12,
@@ -293,10 +293,98 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
-                } 
+                }
             ],
             onChapterExit: [
             ]
         },
+        // {
+        //     id: 'ny-stations-only',
+        //     alignment: 'left',
+        //     hidden: false,
+        //     type: 'reprise',
+        //     //title: 'New York States',
+        //     //image: './assets/san-fran.jpeg',
+        //     description: 'In total, 8 proposals to bring more gas into New York through compressor station expansions have been put forth in the last five years, a City Limits review of public filings show. ',
+        //     location: {
+        //         center: [-74.2179, 41.1994],
+        //         zoom: 7.5,
+        //         pitch: 60,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [
+        //         {
+        //             layer: 'ny-pipelines-all',
+        //             opacity: 0,
+        //         },
+        //         {
+        //             layer: 'ny-pipelines-proposed',
+        //             opacity: 0,
+        //         },
+        //         {
+        //             layer: 'ny-pipelines-iroquois',
+        //             opacity: 0,
+        //         },
+        //         {
+        //             layer: 'ny-points-iroquois',
+        //             opacity: 0,
+        //         },
+        //         {
+        //             layer: 'ny-proposed-points',
+        //             opacity: 1,
+        //         }
+        //     ],
+        //     onChapterExit: [
+        //     ]
+        // },
     ]
 };
+
+var repriseConfig = [{
+    id: 'ny-stations-only',
+    alignment: 'left',
+    hidden: false,
+    type: 'reprise',
+    //title: 'New York States',
+    //image: './assets/san-fran.jpeg',
+    description: 'In total, 8 proposals to bring more gas into New York through compressor station expansions have been put forth in the last five years, a City Limits review of public filings show. ',
+    location: {
+        center: [-74.2179, 41.1994],
+        zoom: 7.5,
+        pitch: 60,
+        bearing: 0
+    },
+    mapAnimation: 'flyTo',
+    rotateAnimation: false,
+    callback: '',
+    onChapterEnter: [
+        {
+            layer: 'ny-pipelines-all',
+            opacity: 0,
+        },
+        {
+            layer: 'ny-pipelines-proposed',
+            opacity: 0,
+        },
+        {
+            layer: 'ny-pipelines-iroquois',
+            opacity: 0,
+        },
+        {
+            layer: 'ny-points-iroquois',
+            opacity: 0,
+        },
+        {
+            layer: 'ny-proposed-points',
+            opacity: 1,
+        }
+    ],
+    onChapterExit: [
+    ]
+}]
+
+
+

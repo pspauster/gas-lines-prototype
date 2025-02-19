@@ -63,6 +63,22 @@ var config = {
                 {
                     layer: 'ny-pipelines-all',
                     opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 0,
                 }
             ]
         },
@@ -108,6 +124,22 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-all',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
                     opacity: 0,
                 }
             ]
@@ -269,8 +301,12 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-proposed',
-                    opacity: 1,
+                    opacity: 0,
                 },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 0,
+                }
             ]
         },
         {
@@ -293,98 +329,86 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 1,
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 1,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 1,
+                }
             ]
         },
-        // {
-        //     id: 'ny-stations-only',
-        //     alignment: 'left',
-        //     hidden: false,
-        //     type: 'reprise',
-        //     //title: 'New York States',
-        //     //image: './assets/san-fran.jpeg',
-        //     description: 'In total, 8 proposals to bring more gas into New York through compressor station expansions have been put forth in the last five years, a City Limits review of public filings show. ',
-        //     location: {
-        //         center: [-74.2179, 41.1994],
-        //         zoom: 7.5,
-        //         pitch: 60,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [
-        //         {
-        //             layer: 'ny-pipelines-all',
-        //             opacity: 0,
-        //         },
-        //         {
-        //             layer: 'ny-pipelines-proposed',
-        //             opacity: 0,
-        //         },
-        //         {
-        //             layer: 'ny-pipelines-iroquois',
-        //             opacity: 0,
-        //         },
-        //         {
-        //             layer: 'ny-points-iroquois',
-        //             opacity: 0,
-        //         },
-        //         {
-        //             layer: 'ny-proposed-points',
-        //             opacity: 1,
-        //         }
-        //     ],
-        //     onChapterExit: [
-        //     ]
-        // },
+        {
+            id: 'ny-stations-only',
+            alignment: 'left',
+            hidden: false,
+            type: 'reprise',
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: 'In total, 8 proposals to bring more gas into New York through compressor station expansions have been put forth in the last five years, a City Limits review of public filings show. ',
+            location: {
+                center: [-74.2179, 41.1994],
+                zoom: 7.5,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 1,
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-all',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-proposed',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-proposed-points',
+                    opacity: 0,
+                }
+            ]
+        },
     ]
 };
-
-var repriseConfig = [{
-    id: 'ny-stations-only',
-    alignment: 'left',
-    hidden: false,
-    type: 'reprise',
-    //title: 'New York States',
-    //image: './assets/san-fran.jpeg',
-    description: 'In total, 8 proposals to bring more gas into New York through compressor station expansions have been put forth in the last five years, a City Limits review of public filings show. ',
-    location: {
-        center: [-74.2179, 41.1994],
-        zoom: 7.5,
-        pitch: 60,
-        bearing: 0
-    },
-    mapAnimation: 'flyTo',
-    rotateAnimation: false,
-    callback: '',
-    onChapterEnter: [
-        {
-            layer: 'ny-pipelines-all',
-            opacity: 0,
-        },
-        {
-            layer: 'ny-pipelines-proposed',
-            opacity: 0,
-        },
-        {
-            layer: 'ny-pipelines-iroquois',
-            opacity: 0,
-        },
-        {
-            layer: 'ny-points-iroquois',
-            opacity: 0,
-        },
-        {
-            layer: 'ny-proposed-points',
-            opacity: 1,
-        }
-    ],
-    onChapterExit: [
-    ]
-}]
-
 
 

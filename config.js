@@ -356,7 +356,7 @@ var config = {
             description: 'In total, 8 proposals to bring more gas into New York through compressor station expansions have been put forth in the last five years, a City Limits review of public filings show. ',
             location: {
                 center: [-74.2179, 41.1994],
-                zoom: 7.5,
+                zoom: 8,
                 pitch: 60,
                 bearing: 0
             },

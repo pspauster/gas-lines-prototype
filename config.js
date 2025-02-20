@@ -149,7 +149,7 @@ var config = {
             alignment: 'center',
             hidden: false,
             //title: 'New York States',
-            type: 'image',
+            //type: 'image',
             imagebackground: 'assets/clcpa_bill_signing_sjm_in_nyc_copy.jpeg',
             description: 'Back in 2019, when New York passed its landmark climate law, the CLCPA, it became a shining example of national climate action. The law established a roadmap for the State to mostly phase out planet-warming fossil fuels like gas by 2050 and transition to clean energy instead.',
             location: {
@@ -338,11 +338,11 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-proposed',
-                    opacity: 1,
+                    opacity: 0,
                 },
                 {
                     layer: 'ny-proposed-points',
-                    opacity: 1,
+                    opacity: 0,
                 }
             ]
         },
